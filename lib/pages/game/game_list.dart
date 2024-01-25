@@ -5,7 +5,8 @@ import 'package:tabernarium/theme/theme.dart';
 import 'package:provider/provider.dart';
 
 class GameListPage extends StatefulWidget {
-  const GameListPage({super.key});
+  final VoidCallback createGame;
+  const GameListPage({super.key, required this.createGame});
 
   @override
   State<GameListPage> createState() => _GameListPageState();
@@ -51,7 +52,7 @@ class _GameListPageState extends State<GameListPage> {
         )
       ])),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => widget.createGame(),
         backgroundColor: actualTheme.colorScheme.onSurface,
         elevation: 10,
         shape: const CircleBorder(),

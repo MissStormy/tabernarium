@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tabernarium/pages/chat/chatroom.dart';
+import 'package:tabernarium/pages/game/game_creation.dart';
 import 'package:tabernarium/pages/game/game_list.dart';
 import 'package:tabernarium/pages/home/home.dart';
 import 'package:tabernarium/pages/user/group_profile.dart';
@@ -24,10 +25,15 @@ class _NexusPageState extends State<NexusPage> {
     //on the Appbar and the BottomNavBar
     final List<Widget> screens = [
       ChatRoom(),
-      GameListPage(),
+      GameListPage(createGame: () {
+        setState(() {
+          _selectedIndex = 5;
+        });
+      }),
       HomePage(),
       GroupProfilePage(),
-      UserProfilePage()
+      UserProfilePage(),
+      GameCreationPage()
     ];
     //This controls the theme
     //final actualTheme = Provider.of<ThemeLoader>(context).actualTheme;
