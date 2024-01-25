@@ -87,16 +87,16 @@ class ThemeLoader with ChangeNotifier {
                 color: Color(0xFF0D0D0D)))));
   }
 
-  //Palette: Latte Green
+  //Palette: Dungeon Master
   ThemeData _myDarkTheme() {
     return (ThemeData.dark().copyWith(
         colorScheme: const ColorScheme(
-          primary: Color(0xFF1f3236),
-          secondary: Color(0xFF34524a),
-          background: Color(0xFF62846e),
-          surface: Color(0xFF030e14),
-          onBackground: Color(0xFF9cbb9c),
-          onSurface: Color(0xFF4D734C),
+          primary: Color(0xFF280e1b),
+          secondary: Color(0xFF758089),
+          background: Color(0xFF9a94ac),
+          surface: Color(0xFF602c49),
+          onBackground: Color(0xFF8d5b54),
+          onSurface: Color(0xFFb47c5c),
           brightness: Brightness.dark,
           error: Color(0xFFFF6E40),
           onError: Color(0xFFECEFF1),

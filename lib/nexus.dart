@@ -36,12 +36,13 @@ class _NexusPageState extends State<NexusPage> {
       resizeToAvoidBottomInset: false,
       //###################### AppBar ##########################
       appBar: AppBar(
+        backgroundColor: actualTheme.colorScheme.surface,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
               'assets/TabernariumLogo.png',
-              width: 60.0,
+              width: 50.0,
             ),
             Image.asset(
               'assets/TabernariumTitle.png',
@@ -55,10 +56,10 @@ class _NexusPageState extends State<NexusPage> {
           _selectedIndex], //Every time you touch a buttom, this index changes, only changing the body
       //###################### Bottom Nav Bar ##########################
       bottomNavigationBar: BottomAppBar(
-        color: actualTheme.colorScheme.secondary,
+        color: actualTheme.colorScheme.onBackground,
         shape: const CircularNotchedRectangle(),
         notchMargin: 6,
-        shadowColor: actualTheme.colorScheme.background,
+        shadowColor: actualTheme.colorScheme.onSurface,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -125,7 +126,7 @@ class _NexusPageState extends State<NexusPage> {
             _selectedIndex = 2;
           });
         },
-        backgroundColor: actualTheme.colorScheme.onPrimary,
+        backgroundColor: actualTheme.colorScheme.surface,
         elevation: 5,
         shape: const CircleBorder(),
         child: ImageIcon(
