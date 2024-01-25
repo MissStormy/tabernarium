@@ -28,8 +28,17 @@ class MemberContainer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CircleAvatar(
-              backgroundImage: NetworkImage(imageUrl),
-              radius: 30.0,
+              backgroundColor:
+                  Colors.transparent, 
+              radius: 60.0, 
+              child: ClipOval(
+                child: Image.asset(
+                  imageUrl,
+                  fit: BoxFit.cover, 
+                  width: 2 * 60.0, 
+                  height: 2 * 60.0, 
+                ),
+              ),
             ),
             SizedBox(width: 16.0),
             Expanded(

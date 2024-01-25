@@ -1,30 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:tabernarium/widgets/Containers/member_container.dart';
 
 class UserProfilePage extends StatelessWidget {
   const UserProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // Mock data for the user profile (replace with actual data from your backend)
     final Map<String, dynamic> userProfile = {
-      'imageUrl': 'https://example.com/user_image.jpg',
-      'name': 'John Doe',
-      'position': 'Boss',
+      'imageUrl': 'assets/pfp.jpeg',
+      'name': 'Lilith',
+      'position': 'Master',
       'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      'currentGame': 'Dungeons & Dragons', // Info from game_list page
-      // Add more settings as needed
+      'currentGame': 'Dungeons & Dragons',
     };
 
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(20.0),
         child: Column(
+          
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             CircleAvatar(
-              backgroundImage: NetworkImage(userProfile['imageUrl']),
-              radius: 60.0, // Adjust the size of the avatar as needed
+              backgroundColor:
+                  Colors.transparent, 
+              radius: 60.0, 
+              child: ClipOval(
+                child: Image.asset(
+                  userProfile['imageUrl'],
+                  fit: BoxFit.cover, 
+                  width: 2 * 60.0, 
+                  height: 2 * 60.0, 
+                ),
+              ),
             ),
             SizedBox(height: 16.0),
             Text(

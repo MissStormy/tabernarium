@@ -30,7 +30,7 @@ class _NexusPageState extends State<NexusPage> {
           _selectedIndex = 5;
         });
       }),
-      HomePage(),
+      HomeScreen(),
       GroupProfilePage(),
       UserProfilePage(),
       GameCreationPage()
