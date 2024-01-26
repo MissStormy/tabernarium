@@ -4,16 +4,16 @@ import 'package:provider/provider.dart';
 
 class GameAccordion extends StatefulWidget {
   final String title;
-  final IconData creator;
+  //final Image creator;
   final String players;
-  final String gameName;
+  final String location;
   final String description;
 
-  GameAccordion({
+  const GameAccordion({super.key, 
     required this.title,
-    required this.creator,
+    //required this.creator,
     required this.players,
-    required this.gameName,
+    required this.location,
     required this.description,
   });
 
@@ -30,7 +30,7 @@ class _GameAccordionState extends State<GameAccordion> {
     final backgroundColor = actualTheme.colorScheme.primary;
     final collapsedColor =
         actualTheme.colorScheme.primary; // Adjust the color as needed
-    final greyBorderColor = Colors.grey; // Adjust the color as needed
+    const greyBorderColor = Colors.grey; // Adjust the color as needed
 
     return Container(
       decoration: BoxDecoration(
@@ -42,10 +42,10 @@ class _GameAccordionState extends State<GameAccordion> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ListTile(
-              leading: Icon(widget.creator),
+              leading: Image.asset('assets/d20.png'),
               title: Text(
                 widget.title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold, // Make title bold
                   fontSize: 18, // Increase title font size
                 ),
@@ -53,12 +53,12 @@ class _GameAccordionState extends State<GameAccordion> {
               subtitle: Text(widget.players),
             ),
             _isExpanded
-                ? SizedBox() // Empty SizedBox if expanded
+                ? const SizedBox() // Empty SizedBox if expanded
                 : ElevatedButton(
                     onPressed: () {
                       // Action when "Unirse" button is pressed
                     },
-                    child: Text("Unirse"),
+                    child: const Text("Unirse"),
                   ),
           ],
         ),
@@ -70,14 +70,14 @@ class _GameAccordionState extends State<GameAccordion> {
         ),
         children: <Widget>[
           ListTile(
-            title: Text(widget.gameName),
+            title: Text(widget.location),
           ),
           ListTile(
             title: Text(widget.description),
           ),
           ListTile(
             trailing: IconButton(
-              icon: Icon(Icons.favorite_border), // Heart-shaped icon
+              icon: const Icon(Icons.favorite_border), // Heart-shaped icon
               onPressed: () {
                 // Action when heart icon is pressed
               },
@@ -89,10 +89,10 @@ class _GameAccordionState extends State<GameAccordion> {
                     onPressed: () {
                       // Action when "Unirse" button is pressed
                     },
-                    child: Text("Unirse"),
+                    child: const Text("Unirse"),
                   ),
                 )
-              : SizedBox(), // Empty SizedBox if not expanded
+              : const SizedBox(), // Empty SizedBox if not expanded
         ],
         onExpansionChanged: (value) {
           setState(() {

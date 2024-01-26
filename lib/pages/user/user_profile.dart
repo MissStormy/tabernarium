@@ -15,7 +15,7 @@ class UserProfilePage extends StatelessWidget {
 
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -33,41 +33,41 @@ class UserProfilePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Text(
               userProfile['name'],
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
             Text(
               userProfile['position'],
-              style: TextStyle(color: Colors.grey),
+              style: const TextStyle(color: Colors.grey),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Text(
               userProfile['description'],
               textAlign: TextAlign.justify,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             userProfile['currentGame'] != null
                 ? Column(
                     children: [
                       Text(
                         'Current Game: ${userProfile['currentGame']}',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 16.0),
+                      const SizedBox(height: 16.0),
                     ],
                   )
-                : SizedBox(),
+                : const SizedBox(),
             // Add settings section below
-            Text(
+            const Text(
               'Settings',
               style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8.0),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 8.0),
+            const SizedBox(height: 16.0),
             // Theme dropdown
             DropdownButton<String>(
               items: <String>[
@@ -85,53 +85,53 @@ class UserProfilePage extends StatelessWidget {
               onChanged: (String? newValue) {
                 // Handle theme change
               },
-              hint: Text('Select Theme'),
+              hint: const Text('Select Theme'),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             // Help & Support accordion
             ExpansionTile(
-              title: Text('Help & Support'),
+              title: const Text('Help & Support'),
               children: [
                 ListTile(
-                  title: Text('FAQs'),
+                  title: const Text('FAQs'),
                   onTap: () {
                     // Handle FAQ tap
                   },
                 ),
                 ListTile(
-                  title: Text('Contact Us'),
+                  title: const Text('Contact Us'),
                   onTap: () {
                     // Handle contact tap
                   },
                 ),
               ],
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             // Credits accordion
             ExpansionTile(
-              title: Text('Credits'),
+              title: const Text('Credits'),
               children: [
                 ListTile(
-                  title: Text('Developers'),
+                  title: const Text('Developers'),
                   onTap: () {
                     // Handle developers tap
                   },
                 ),
                 ListTile(
-                  title: Text('Designers'),
+                  title: const Text('Designers'),
                   onTap: () {
                     // Handle designers tap
                   },
                 ),
               ],
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             // Logout button
             ElevatedButton(
               onPressed: () {
                 // Handle logout
               },
-              child: Text('Log Out'),
+              child: const Text('Log Out'),
             ),
           ],
         ),

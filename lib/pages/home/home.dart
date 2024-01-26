@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabernarium/widgets/Containers/custom_taberna_container.dart';
 import 'package:tabernarium/widgets/Containers/home_game.dart';
 import 'package:tabernarium/widgets/Containers/taberna_container.dart';
 
@@ -24,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen>
     return Scaffold(
       appBar: AppBar(
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(10.0), // Adjust the height as needed
+          preferredSize: const Size.fromHeight(10.0), // Adjust the height as needed
           child: TabBar(
             controller: _tabController,
             tabs: const [
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
+        children: const [
           DiscoverTab(),
           GenresTab(),
           NewsTab(),
@@ -50,27 +51,29 @@ class _HomeScreenState extends State<HomeScreen>
 // Import necessary packages and widgets
 
 class DiscoverTab extends StatelessWidget {
+  const DiscoverTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Container(
-      margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
+      margin: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
+          const Center(
             child: Text(
               'Partidas',
               style: TextStyle(fontSize: 30),
               textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(height: 10.0),
+          const SizedBox(height: 10.0),
           SizedBox(
               height: 200,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: [
+                children: const [
                   HomeGameContainer(
                       creator: Icons.person,
                       game: 'Cthulhu',
@@ -88,7 +91,7 @@ class DiscoverTab extends StatelessWidget {
                       members: '5')
                 ],
               )),
-              SizedBox(height: 10.0),
+              const SizedBox(height: 10.0),
               const Center(
             child: Text(
               'Tabernas',
@@ -96,19 +99,9 @@ class DiscoverTab extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(height: 10.0),
+          const SizedBox(height: 10.0),
           Column(children: [
-            TabernaContainer(
-              groupName: 'R.I.P', 
-              numberOfMembers: '40', 
-              groupImage: 'assets/d20.png', 
-              onPressed: (){}),
-              SizedBox(height: 10.0,),
-              TabernaContainer(
-              groupName: 'R.I.P', 
-              numberOfMembers: '40', 
-              groupImage: 'assets/d20.png', 
-              onPressed: (){})
+            CustomTaberna()
           ],)
         ],
       ),
@@ -121,7 +114,7 @@ class GenresTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -137,7 +130,7 @@ class NewsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

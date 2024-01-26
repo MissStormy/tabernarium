@@ -24,16 +24,16 @@ class _NexusPageState extends State<NexusPage> {
     //Here you have all the main screens which will react when touching the buttons
     //on the Appbar and the BottomNavBar
     final List<Widget> screens = [
-      ChatRoom(),
+      const ChatRoom(),
       GameListPage(createGame: () {
         setState(() {
           _selectedIndex = 5;
         });
       }),
-      HomeScreen(),
-      GroupProfilePage(),
-      UserProfilePage(),
-      GameCreationPage()
+      const HomeScreen(),
+      const GroupProfilePage(),
+      const UserProfilePage(),
+      const GameCreationPage()
     ];
     //This controls the theme
     //final actualTheme = Provider.of<ThemeLoader>(context).actualTheme;
@@ -75,7 +75,7 @@ class _NexusPageState extends State<NexusPage> {
                     _selectedIndex = 0;
                   });
                 },
-                icon: ImageIcon(
+                icon: const ImageIcon(
                   AssetImage('assets/beer.png'),
                   color: Colors.white,
                   size: 30,
@@ -89,7 +89,7 @@ class _NexusPageState extends State<NexusPage> {
                       _selectedIndex = 1;
                     });
                   },
-                  icon: ImageIcon(
+                  icon: const ImageIcon(
                     AssetImage('assets/crossed_swords.png'),
                     color: Colors.white,
                     size: 30,
@@ -104,7 +104,7 @@ class _NexusPageState extends State<NexusPage> {
                       _selectedIndex = 3;
                     });
                   },
-                  icon: ImageIcon(
+                  icon: const ImageIcon(
                     AssetImage('assets/crown.png'),
                     color: Colors.white,
                     size: 30,
@@ -117,7 +117,7 @@ class _NexusPageState extends State<NexusPage> {
                     _selectedIndex = 4;
                   });
                 },
-                icon: ImageIcon(
+                icon: const ImageIcon(
                   AssetImage('assets/dragon.png'),
                   color: Colors.white,
                   size: 30,
@@ -135,7 +135,7 @@ class _NexusPageState extends State<NexusPage> {
         backgroundColor: actualTheme.colorScheme.surface,
         elevation: 5,
         shape: const CircleBorder(),
-        child: ImageIcon(
+        child: const ImageIcon(
           AssetImage('assets/d20.png'),
           color: Colors.white,
           size: 40,

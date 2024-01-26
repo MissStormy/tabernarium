@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tabernarium/api/api_service.dart';
+import 'package:tabernarium/models/game.dart';
 import 'package:tabernarium/widgets/Containers/game_container.dart';
 import 'package:tabernarium/widgets/Extra/search_bar.dart';
 import 'package:tabernarium/theme/theme.dart';
@@ -13,6 +15,17 @@ class GameListPage extends StatefulWidget {
 }
 
 class _GameListPageState extends State<GameListPage> {
+  List<Game> games = [];
+
+  @override
+  void initState() {
+    super.initState();
+    ApiService.fetchGames().then((fetchedGames) {
+      setState(() {
+        games = fetchedGames;
+      });
+    });
+  }
   final TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -35,18 +48,23 @@ class _GameListPageState extends State<GameListPage> {
                       }),
                 )
               ]),
-              SizedBox(height: 10.0),
-              Text(
+              const SizedBox(height: 10.0),
+              const Text(
                 'Partidas',
                 style: TextStyle(fontSize: 30),
               ),
-              SizedBox(height: 10.0),
-              GameAccordion(
-                  title: 'Los hijos de Nyarlathotep',
-                  creator: Icons.person,
-                  players: '6/9',
-                  gameName: 'Call of Cthulhu',
-                  description: 'Una gran partida para pegarse con pulpos')
+              const SizedBox(height: 10.0),
+              Column(
+                    children: games.map((game) {
+                      return GameAccordion(
+                        title: game.title,
+                        
+                        players: game.players,
+                        location: game.location,
+                        description: game.description,
+                      );
+                    }).toList(),
+                  ),
             ],
           ),
         )

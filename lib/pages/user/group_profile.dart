@@ -32,7 +32,7 @@ class _GroupProfilePageState extends State<GroupProfilePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Miembros'),),
+        title: const Text('Miembros'),),
       body:
        ListView.builder(
         itemCount: members.length,

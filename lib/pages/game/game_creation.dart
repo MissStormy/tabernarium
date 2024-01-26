@@ -9,12 +9,12 @@ class GameCreationPage extends StatefulWidget {
 
 class _GameCreationPageState extends State<GameCreationPage> {
   int _currentStep = 0;
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _typeController = TextEditingController();
-  TextEditingController _maxPlayersController = TextEditingController();
-  TextEditingController _descriptionController = TextEditingController();
-  TextEditingController _locationController = TextEditingController();
-  TextEditingController _durationController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _typeController = TextEditingController();
+  final TextEditingController _maxPlayersController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _locationController = TextEditingController();
+  final TextEditingController _durationController = TextEditingController();
 
   @override
   void dispose() {
@@ -31,7 +31,7 @@ class _GameCreationPageState extends State<GameCreationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create New Game'),
+        title: const Text('Create New Game'),
       ),
       body: Stepper(
         currentStep: _currentStep,
@@ -47,45 +47,45 @@ class _GameCreationPageState extends State<GameCreationPage> {
         },
         steps: [
           Step(
-            title: Text('Step 1'),
+            title: const Text('Step 1'),
             content: TextFormField(
               controller: _nameController,
-              decoration: InputDecoration(labelText: 'Game Name'),
+              decoration: const InputDecoration(labelText: 'Game Name'),
             ),
           ),
           Step(
-            title: Text('Step 2'),
+            title: const Text('Step 2'),
             content: TextFormField(
               controller: _typeController,
-              decoration: InputDecoration(labelText: 'Game Type'),
+              decoration: const InputDecoration(labelText: 'Game Type'),
             ),
           ),
           Step(
-            title: Text('Step 3'),
+            title: const Text('Step 3'),
             content: TextFormField(
               controller: _maxPlayersController,
-              decoration: InputDecoration(labelText: 'Max Players'),
+              decoration: const InputDecoration(labelText: 'Max Players'),
             ),
           ),
           Step(
-            title: Text('Step 4'),
+            title: const Text('Step 4'),
             content: TextFormField(
               controller: _descriptionController,
-              decoration: InputDecoration(labelText: 'Description'),
+              decoration: const InputDecoration(labelText: 'Description'),
             ),
           ),
           Step(
-            title: Text('Step 5'),
+            title: const Text('Step 5'),
             content: TextFormField(
               controller: _locationController,
-              decoration: InputDecoration(labelText: 'Location'),
+              decoration: const InputDecoration(labelText: 'Location'),
             ),
           ),
           Step(
-            title: Text('Step 6'),
+            title: const Text('Step 6'),
             content: TextFormField(
               controller: _durationController,
-              decoration: InputDecoration(labelText: 'Duration'),
+              decoration: const InputDecoration(labelText: 'Duration'),
             ),
           ),
         ],

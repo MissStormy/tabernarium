@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
 
 class TabernaContainer extends StatelessWidget {
   final String groupName;
@@ -10,7 +8,7 @@ class TabernaContainer extends StatelessWidget {
   final String groupImage;
   final VoidCallback onPressed;
 
-  TabernaContainer({
+  const TabernaContainer({super.key, 
     required this.groupName,
     required this.numberOfMembers,
     required this.groupImage,
@@ -22,7 +20,7 @@ class TabernaContainer extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.grey),
           borderRadius: BorderRadius.circular(8.0),
@@ -35,28 +33,28 @@ class TabernaContainer extends StatelessWidget {
               width: 40, // Adjust the width as needed
               height: 40, // Adjust the height as needed
             ),
-            SizedBox(width: 16.0),
+            const SizedBox(width: 16.0),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Group name
                 Text(
                   groupName,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
                 // Number of members
                 Text(
                   'Members: $numberOfMembers',
-                  style: TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 16),
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             // "Unirse" button
             ElevatedButton(
               onPressed: onPressed,
-              child: Text('Unirse'),
+              child: const Text('Unirse'),
             ),
           ],
         ),
