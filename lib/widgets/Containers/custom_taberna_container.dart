@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 import 'package:tabernarium/theme/theme.dart';
 import 'package:provider/provider.dart';
 class CustomTaberna extends StatelessWidget {

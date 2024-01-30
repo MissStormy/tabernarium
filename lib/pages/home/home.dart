@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tabernarium/widgets/Containers/custom_taberna_container.dart';
 import 'package:tabernarium/widgets/Containers/home_game.dart';
-import 'package:tabernarium/widgets/Containers/taberna_container.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
